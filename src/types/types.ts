@@ -5,3 +5,5 @@ export type MenuType = {
     description: string;
     type: "meat" | "fish" | "vegetarian";
 }
+
+export type CartItemType = MenuType & { quantity: number };

@@ -12,3 +12,35 @@ code {
     monospace;
 }
 
+.App {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  height: 100vh;
+  align-items: center;
+}
+
+
+.btn {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 5px 5px; /* Adjust padding as needed */
+  cursor: pointer;
+  color: blue;
+  font-size: x-large;
+  min-width: 40px;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: #f0f0f0;
+}

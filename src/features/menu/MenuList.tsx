@@ -1,28 +1,41 @@
 import React, { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../../app/storeHooks.ts";
-import { selectMenu, fetchMenu } from "./menuSlice.ts";
+import { selectAllMenus, fetchMenu, selectLoadingStatus } from "./menuSlice.ts";
+import { MenuLoadingStatus } from "../../constances.ts";
+import MenuItem from "./MenuItem.tsx";
+
+import "../../styles/Menu.css";
 
 function MenuList() {
     const dispatch = useAppDispatch();
-    const menus = useAppSelector(selectMenu);
+    const menus = useAppSelector(selectAllMenus);
+    const loadingStatus = useAppSelector(selectLoadingStatus);
 
     useEffect(() => {
-        dispatch(fetchMenu());
-    }, [dispatch]);
+        if (loadingStatus === MenuLoadingStatus.IDLE) {
+            dispatch(fetchMenu());
+        }
+    }, [dispatch, loadingStatus]);
 
 
     return (
-        <div>
+        <div className="menu-list">
             <h2>Menu List</h2>
-            {menus.length === 0 ? <p>No menu available</p> :
-                menus.map((menu, index) => (
-                    <div key={index}>
-                        <h3>{menu.title}</h3>
-                        <p>{menu.description}</p>
-                        <p>{menu.price}</p>
-                    </div>
+
+            {loadingStatus === MenuLoadingStatus.LOADING ? (
+                <p>Loading...</p>
+            ) : loadingStatus === MenuLoadingStatus.FAILED ? (
+                <p>Error loading menus</p>
+            ) : menus.length === 0 ? (
+                <p>No menu available</p>
+            ) : (
+                menus.map((item) => (
+                    <li key={item.id}>
+                        <MenuItem item={item} />
+                    </li>
                 ))
-            }
+            )}
+
         </div>
     );
 }

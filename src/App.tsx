@@ -1,13 +1,18 @@
 import React from 'react';
 
 import './styles/App.css';
+import RestaurantHeader from './features/restaurant/RestaurantHeader.tsx';
 import MenuList from './features/menu/MenuList.tsx';
+import ShopingCart from './features/cart/ShoppingCart.tsx';
 
 function App() {
   return (
     <div className="App">
-      <h1>React App</h1>
-      <MenuList />
+      <div className="main-content">
+        <RestaurantHeader />
+        <MenuList />
+      </div>
+      <ShopingCart />
     </div>
   );
 }
