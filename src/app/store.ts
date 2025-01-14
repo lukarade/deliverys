@@ -5,19 +5,31 @@ import cartReducer from "../features/cart/cartSlice.ts";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-const persistConfig = {
-    key: "root",
+const persistMenuConfig = {
+    key: "menu",
+    storage,
+};
+const persistCartConfig = {
+    key: "cart",
     storage,
 };
 
-const persistedCartReducer = persistReducer(persistConfig, cartReducer);
-const persistedMenuReducer = persistReducer(persistConfig, menuReducer);
+const persistedMenuReducer = persistReducer(persistMenuConfig, menuReducer);
+const persistedCartReducer = persistReducer(persistCartConfig, cartReducer);
 
 const store = configureStore({
     reducer: {
         menu: persistedMenuReducer,
         cart: persistedCartReducer,
-    }
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware(
+        {
+            serializableCheck: {
+                ignoredActions: ['persist/PERSIST'],
+            }
+        }
+    ),
+
 });
 
 export type RootState = ReturnType<typeof store.getState>;

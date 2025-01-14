@@ -9,7 +9,7 @@ import Button from "../../components/Button.tsx";
 import "../../styles/Menu.css";
 
 function MenuList() {
-    const [loadedItems, setLoadedItems] = useState(10);
+    const [loadedItems, setLoadedItems] = useState(100);
     const [showFavorites, setShowFavorites] = useState(false);
 
     const dispatch = useAppDispatch();
@@ -31,6 +31,14 @@ function MenuList() {
 
     const filteredMenus = showFavorites ? menus.filter(menu => menu.favorite) : menus;
 
+    const groupedMenus = filteredMenus.reduce((acc, menu) => {
+        if (!acc[menu.type]) {
+            acc[menu.type] = [];
+        }
+        acc[menu.type].push(menu);
+        return acc;
+    }, {});
+
     return (
         <div className="menu-list">
             <h2>Menu List</h2>
@@ -42,10 +50,17 @@ function MenuList() {
             ) : filteredMenus.length === 0 ? (
                 <p>No menu available</p>
             ) : (
-                filteredMenus.slice(0, loadedItems).map((item) => (
-                    <li key={item.id}>
-                        <MenuItem item={item} />
-                    </li>
+                Object.keys(groupedMenus).map((type) => (
+                    <div key={type}>
+                        <h3>{type}</h3>
+                        <ul>
+                            {groupedMenus[type].slice(0, loadedItems).map((menu) => (
+                                <li key={menu.id}>
+                                    <MenuItem item={menu} />
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 ))
             )}
             {loadedItems < filteredMenus.length && (

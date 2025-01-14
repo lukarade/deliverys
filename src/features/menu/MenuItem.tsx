@@ -18,7 +18,7 @@ function MenuItem({ item, }: MenuItemProps) {
             <div className="item-content">
                 <div className="item-header">
                     <h3>{item.title}</h3>
-                    <div className={"favorite-marker"} onClick={() => dispatch(toggleFavorite(item.id))}>{item.favorite ? "❤️" : "♡"}</div>
+                    <div className={"favorite-marker noselect"} onClick={() => dispatch(toggleFavorite(item.id))}>{item.favorite ? "❤️" : "♡"}</div>
                 </div>
                 {item.price} €
                 <div className="item-description">

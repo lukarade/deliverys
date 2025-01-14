@@ -5,6 +5,12 @@
     width: 60%; 
 }
 
+.menu-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
 .menu-item {
     display: flex;
     justify-content: space-between;
