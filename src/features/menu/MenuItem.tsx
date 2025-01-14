@@ -1,24 +1,31 @@
 import React from "react";
 import Button from "../../components/Button.tsx";
 import { addItemToCart } from "../cart/cartSlice.ts";
-import { MenuType } from "../../types/types.ts";
+import { CartItemType, MenuType } from "../../types/types.ts";
+import { toggleFavorite } from "./menuSlice.ts";
+import { useAppDispatch } from "../../app/storeHooks.ts";
 
 interface MenuItemProps {
     item: MenuType;
 }
 
-function MenuItem({ item }: MenuItemProps) {
+function MenuItem({ item, }: MenuItemProps) {
+    const cartItem: CartItemType = { ...item, quantity: 1 };
+    const dispatch = useAppDispatch();
+
     return (
         <div className="menu-item">
             <div className="item-content">
-                <h3>{item.title}</h3>
+                <div className="item-header">
+                    <h3>{item.title}</h3>
+                    <div className={"favorite-marker"} onClick={() => dispatch(toggleFavorite(item.id))}>{item.favorite ? "❤️" : "♡"}</div>
+                </div>
                 {item.price} €
-
                 <div className="item-description">
                     {item.description}
                 </div>
             </div>
-            <Button action={addItemToCart(item)}
+            <Button action={addItemToCart(cartItem)}
                 className="add-to-cart-btn"
             >
                 +

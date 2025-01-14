@@ -8,8 +8,8 @@
   
 ### Displaying Data
 - [x] Display the data in a table
-  - [ ] Only the first 10 rows should be displayed
-  - [ ] Add a pagination to display the rest of the data
+  - [x] Only the first 10 rows should be displayed
+  - [x] Add a pagination to display the rest of the data
 - [ ] Filter the data for favorite items
   - [ ] Add a button to filter the data
   - [ ] Add a button to remove the filter

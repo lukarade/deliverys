@@ -20,8 +20,19 @@
     background-color: #f9f9f9;
 }
 
-.item-content>h3 {
+.item-header {
+    display: flex;
+}
+
+.item-header>h3 {
     margin: 0;
+    margin-right: 10px;
+}
+
+.favorite-marker {
+    display: block;
+    cursor: pointer;
+    font-size: larger;
 }
 
 .add-to-cart-btn {

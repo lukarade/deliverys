@@ -24,6 +24,12 @@ const menuSlice = createSlice({
         setMenu: (state, action: PayloadAction<MenuType[]>) => {
             state.menus = action.payload;
         },
+        toggleFavorite: (state, action: PayloadAction<number>) => {
+            const menu = state.menus.find(menu => menu.id === action.payload);
+            if (menu) {
+                menu.favorite = !menu.favorite;
+            }
+        }
     },
     extraReducers: (builder) => {
         // Add reducers for additional action types here, and handle loading state as needed
@@ -54,7 +60,7 @@ export const fetchMenu = createAppAsyncThunk(
 );
 
 // Reducers
-export const { setMenu } = menuSlice.actions;
+export const { setMenu, toggleFavorite } = menuSlice.actions;
 
 // Selectors
 export const selectAllMenus = (state: { menu: MenuState }): MenuType[] => state.menu.menus;
