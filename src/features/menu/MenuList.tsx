@@ -48,7 +48,11 @@ function MenuList() {
                     </li>
                 ))
             )}
-            {loadedItems < filteredMenus.length ? <Button action={() => showMore()}>More</Button> : null}
+            {loadedItems < filteredMenus.length && (
+                <div className="more-btn-container">
+                    <Button className="more-btn" action={() => showMore()}>More</Button>
+                </div>
+            )}
         </div>
     );
 }

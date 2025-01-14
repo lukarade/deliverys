@@ -40,3 +40,11 @@
     top: calc(50% - 20px);
     right: 20px;
 }
+
+.more-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
