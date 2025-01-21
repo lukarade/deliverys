@@ -1,6 +1,7 @@
 import { Action, ThunkAction, configureStore } from "@reduxjs/toolkit";
 import menuReducer from "../features/menu/menuSlice.ts";
 import cartReducer from "../features/cart/cartSlice.ts";
+import filterReducer from "../features/filters/filterSlice.ts";
 
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
@@ -21,6 +22,7 @@ const store = configureStore({
     reducer: {
         menu: persistedMenuReducer,
         cart: persistedCartReducer,
+        filter: filterReducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware(
         {

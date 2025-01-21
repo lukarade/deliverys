@@ -1,0 +1,30 @@
+.menu-filters {
+    display: flex;
+    flex-direction: column;
+    outline: 1px solid #ccc;	
+    min-height: fit-content;
+    position: sticky;
+    top: 0;
+    background-color: #f9f9f9;
+    z-index: 1;
+    width: 60%; 
+}
+
+#filter-wrapper {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px;
+}
+
+#category-filter-wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.category-filter {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}

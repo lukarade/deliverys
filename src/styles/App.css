@@ -32,6 +32,8 @@ code {
   flex-direction: column;
   width: 80vw;
   height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
   align-items: center;
 }
 

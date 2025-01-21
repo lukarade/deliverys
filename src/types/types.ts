@@ -9,8 +9,10 @@ export type MenuType = {
 
 export type CartItemType = MenuType & { quantity: number };
 
-// export type MenuFilterType = {
-//     type: "meat" | "fish" | "vegetarian";
-//     sort: "asc" | "desc";
-//     is
-// }
+export type MenuFilterType = {
+    type: "all" | "meat" | "fish" | "vegetarian";
+    sort: "asc" | "desc";
+    price: number;
+    favorite: boolean;
+    search?: string;
+}
