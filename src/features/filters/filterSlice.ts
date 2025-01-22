@@ -1,6 +1,6 @@
 import { createSlice, createSelector, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store.ts";
-import { MenuFilterType, MenuType } from "../../types/types.ts";
+import { MenuFilterType } from "../../types/types.ts";
 
 interface FilterState {
     filters: MenuFilterType;
@@ -26,8 +26,6 @@ const filterSlice = createSlice({
         },
         setFilter: (state, action: PayloadAction<Partial<MenuFilterType>>) => {
             state.filters = { ...state.filters, ...action.payload };
-
-
         }
     },
 });

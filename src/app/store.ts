@@ -28,7 +28,8 @@ const store = configureStore({
         {
             serializableCheck: {
                 ignoredActions: ['persist/PERSIST'],
-            }
+            },
+            blacklist: ['filter'],
         }
     ),
 

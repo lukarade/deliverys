@@ -28,3 +28,7 @@
     align-items: center;
     margin-right: 10px;
 }
+
+.current-type > button {
+    color: rgb(255, 8, 8);
+}

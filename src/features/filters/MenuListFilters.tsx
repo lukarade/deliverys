@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { JSX, use, useEffect, useRef, useState } from "react";
 import { selectFilters, selectMenusBasedOnFilters, setFilter } from "./filterSlice.ts";
 import { useAppDispatch, useAppSelector } from "../../app/storeHooks.ts";
 
 import { groupMenusByType } from "../../utils/menuUtils.ts";
+import { useCurrentMenuType } from "../../app/hooks.ts";
 
 import CategoryFilter from "./CategoryFilter.tsx";
 import "../../styles/Filter.css";
 
-function MenuListFilters() {
+interface MenuListFiltersProps {
+    containerRef: React.RefObject<HTMLDivElement | null>;
+}
+
+function MenuListFilters({ containerRef }: MenuListFiltersProps): JSX.Element {
     const [filterText, setFilterText] = useState("");
 
     const dispatch = useAppDispatch();
@@ -16,6 +21,7 @@ function MenuListFilters() {
     const currentMenuCount = currentMenu.length;
 
     const groupedMenus = groupMenusByType(currentMenu);
+    const currentMenuType = useCurrentMenuType(Object.keys(groupedMenus), containerRef);
 
     async function handleFilterChange(e: React.ChangeEvent<HTMLInputElement>): Promise<void> {
         setFilterText(e.target.value);
@@ -26,7 +32,6 @@ function MenuListFilters() {
         setFilterText("");
         dispatch(setFilter({ "search": "" }));
     }
-
 
     return (
         <div className="menu-filters">
@@ -49,7 +54,7 @@ function MenuListFilters() {
             <div id="category-filter-wrapper">
                 {
                     Object.keys(groupedMenus).map((type) => (
-                        <CategoryFilter key={type} type={type} />
+                        <CategoryFilter key={type} type={type} active={currentMenuType === type} />
                     ))
                 }
             </div>

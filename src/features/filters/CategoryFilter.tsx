@@ -2,18 +2,19 @@ import React, { JSX } from "react";
 
 interface CategoryFilterProps {
     type: string;
+    active: boolean;
 }
 
-function CategoryFilter({ type }: CategoryFilterProps): JSX.Element {
+function CategoryFilter({ type, active }: CategoryFilterProps): JSX.Element {
     function handleScrollToType(): void {
         const element = document.getElementById(type);
         if (element) {
-            element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
         }
     }
 
     return (
-        <div className="category-filter">
+        <div className={`category-filter ${active ? "current-type" : ""}`}>
             <button onClick={handleScrollToType}>
                 {type}
             </button>
