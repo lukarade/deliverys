@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
+
 import { useAppSelector, useAppDispatch } from "../../app/storeHooks.ts";
-import { fetchMenu, selectLoadingStatus } from "./menuSlice.ts";
-import { MenuLoadingStatus } from "../../constances.ts";
+import { fetchMenu, selectError, selectLoadingStatus } from "./menuSlice.ts";
 import { selectMenusBasedOnFilters } from "../filters/filterSlice.ts";
 import { capitalizeFirstLetter, groupMenusByType } from "../../utils/menuUtils.ts";
+import { MenuLoadingStatus } from "../../constances.ts";
+import { MenuType } from "../../types/types.ts";
+
 import MenuItem from "./MenuItem.tsx";
 import Button from "../../components/Button.tsx";
 
@@ -13,10 +16,10 @@ function MenuList() {
     const [loadedItems, setLoadedItems] = useState(100);
 
     const dispatch = useAppDispatch();
-    const menus = useAppSelector(selectMenusBasedOnFilters);
+    const menus: MenuType[] = useAppSelector(selectMenusBasedOnFilters);
     const loadingStatus = useAppSelector(selectLoadingStatus);
-    const groupedMenus = groupMenusByType(menus);
-
+    const errorMessage = useAppSelector(selectError);
+    const groupedMenus = useMemo(() => groupMenusByType(menus), [menus]);
 
     useEffect(() => {
         if (loadingStatus === MenuLoadingStatus.IDLE) {
@@ -35,10 +38,15 @@ function MenuList() {
             {loadingStatus === MenuLoadingStatus.LOADING ? (
                 <p>Loading...</p>
             ) : loadingStatus === MenuLoadingStatus.FAILED ? (
+                console.error(errorMessage),
                 <p>Error loading menus</p>
             ) : menus.length === 0 ? (
                 <p>No menu available</p>
             ) : (
+                // menus.slice(0, loadedItems).map((menu) => (
+                //     <MenuItem key={menu.id} item={menu} />
+                // ))
+
                 Object.keys(groupedMenus).map((type) => (
                     <div key={type} id={type}>
                         <h3>{capitalizeFirstLetter(type)}</h3>
@@ -50,7 +58,7 @@ function MenuList() {
             )}
             {loadedItems < menus.length && (
                 <div className="more-btn-container">
-                    <Button className="more-btn" action={() => showMore()}>More</Button>
+                    <Button className="more-btn" action={showMore}>More</Button>
                 </div>
             )}
         </div>

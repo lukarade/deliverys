@@ -20,11 +20,11 @@
     background-color: #f9f9f9;
 }
 
-.item-header {
+.item__header {
     display: flex;
 }
 
-.item-header>h3 {
+.item__header>h3 {
     margin: 0;
     margin-right: 10px;
 }

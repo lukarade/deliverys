@@ -10,8 +10,16 @@ interface ButtonProps {
 function Button({ children, action, className }: ButtonProps) {
     const dispatch = useAppDispatch();
 
+    function handleAction() {
+        if (typeof action === 'function') {
+            action();
+        } else {
+            dispatch(action);
+        }
+    }
+
     return (
-        <button className={`${className ? className : ''} btn`} onClick={() => dispatch(action)}>{children}</button>
+        <button className={`${className ? className : ''} btn`} onClick={handleAction}>{children}</button>
     );
 }
 

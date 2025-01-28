@@ -43,7 +43,7 @@ const menuSlice = createSlice({
             })
             .addCase(fetchMenu.rejected, (state, action) => {
                 state.status = MenuLoadingStatus.FAILED;
-                state.error = action.error.message ? action.error.message : null;
+                state.error = action.error.message ? action.error.message : "An unknown error occurred!";
             });
     }
 });

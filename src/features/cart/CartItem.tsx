@@ -20,11 +20,26 @@ function CartItem({ item }: CartItemProps) {
                 </div>
                 <div className="item-actions">
                     <div className="item-quantity">
-                        <Button action={increaseOrDecreaseQuantity({ id: updatedItem.id, amount: -1 })} className="quantity-btn">-</Button>
+                        <Button
+                            action={increaseOrDecreaseQuantity({ id: updatedItem.id, amount: -1 })}
+                            className="quantity-btn"
+                        >
+                            -
+                        </Button>
                         <p>{updatedItem.quantity}</p>
-                        <Button action={increaseOrDecreaseQuantity({ id: updatedItem.id, amount: 1 })} className="quantity-btn">+</Button>
+                        <Button
+                            action={increaseOrDecreaseQuantity({ id: updatedItem.id, amount: 1 })}
+                            className="quantity-btn"
+                        >
+                            +
+                        </Button>
                     </div>
-                    <Button action={deleteItemFromCart(updatedItem)} className="delete-btn">🗑</Button>
+                    <Button
+                        action={deleteItemFromCart(updatedItem)}
+                        className="delete-btn"
+                    >
+                        🗑
+                    </Button>
                 </div>
             </div>
         </div>
