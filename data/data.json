@@ -1,0 +1,244 @@
+{
+  "menus": [
+    {
+      "id": 1,
+      "title": "Margherita Pizza",
+      "price": 7.99,
+      "description": "Classic pizza with tomato sauce, mozzarella, and fresh basil.",
+      "type": "vegetarian",
+      "isFavorite": false
+    },
+    {
+      "id": 2,
+      "title": "Pepperoni Pizza",
+      "price": 8.99,
+      "description": "Spicy pepperoni on a bed of mozzarella and tomato sauce.",
+      "type": "meat",
+      "isFavorite": false
+    },
+    {
+      "id": 3,
+      "title": "Quattro Formaggi Pizza",
+      "price": 9.99,
+      "description": "Four cheese pizza with mozzarella, gorgonzola, parmesan, and ricotta.",
+      "type": "vegetarian",
+      "isFavorite": false
+    },
+    {
+      "id": 4,
+      "title": "BBQ Chicken Pizza",
+      "price": 10.49,
+      "description": "Barbecue chicken, red onions, and cilantro on a smoky BBQ base.",
+      "type": "meat",
+      "isFavorite": false
+    },
+    {
+      "id": 5,
+      "title": "Vegetarian Burger",
+      "price": 6.99,
+      "description": "Grilled plant-based patty with lettuce, tomato, and vegan mayo.",
+      "type": "vegetarian",
+      "isFavorite": false
+    },
+    {
+      "id": 6,
+      "title": "Classic Cheeseburger",
+      "price": 7.49,
+      "description": "Beef patty, cheddar cheese, lettuce, tomato, and special sauce.",
+      "type": "meat",
+      "isFavorite": false
+    },
+    {
+      "id": 7,
+      "title": "Grilled Chicken Salad",
+      "price": 8.49,
+      "description": "Grilled chicken breast served on mixed greens with vinaigrette.",
+      "type": "meat",
+      "isFavorite": false
+    },
+    {
+      "id": 8,
+      "title": "Greek Salad",
+      "price": 7.99,
+      "description": "Crisp lettuce, cucumbers, tomatoes, olives, and feta cheese.",
+      "type": "vegetarian",
+      "isFavorite": false
+    },
+    {
+      "id": 9,
+      "title": "Spaghetti Bolognese",
+      "price": 9.49,
+      "description": "Traditional Italian pasta with a rich beef and tomato sauce.",
+      "type": "meat",
+      "isFavorite": false
+    },
+    {
+      "id": 10,
+      "title": "Penne Arrabbiata",
+      "price": 8.49,
+      "description": "Spicy tomato sauce with garlic and chili on penne pasta.",
+      "type": "vegetarian",
+      "isFavorite": false
+    },
+    {
+      "id": 11,
+      "title": "Chicken Tikka Masala",
+      "price": 10.99,
+      "description": "Tender chicken in a creamy tomato curry served with basmati rice.",
+      "type": "meat",
+      "isFavorite": false
+    },
+    {
+      "id": 12,
+      "title": "Vegetable Curry",
+      "price": 9.99,
+      "description": "Mixed vegetables in a flavorful coconut curry served with rice.",
+      "type": "vegetarian",
+      "isFavorite": false
+    },
+    {
+      "id": 13,
+      "title": "Beef Burrito",
+      "price": 8.99,
+      "description": "Flour tortilla stuffed with beef, beans, rice, and salsa.",
+      "type": "meat",
+      "isFavorite": false
+    },
+    {
+      "id": 14,
+      "title": "Vegetarian Quesadilla",
+      "price": 7.99,
+      "description": "Cheese, bell peppers, and onions grilled in a tortilla.",
+      "type": "vegetarian",
+      "isFavorite": false
+    },
+    {
+      "id": 15,
+      "title": "Grilled Salmon",
+      "price": 12.99,
+      "description": "Fresh salmon fillet grilled to perfection with lemon butter sauce.",
+      "type": "fish",
+      "isFavorite": false
+    },
+    {
+      "id": 16,
+      "title": "Fish and Chips",
+      "price": 11.49,
+      "description": "Crispy battered fish served with fries and tartar sauce.",
+      "type": "fish",
+      "isFavorite": false
+    },
+    {
+      "id": 17,
+      "title": "Shrimp Pad Thai",
+      "price": 10.99,
+      "description": "Thai rice noodles stir-fried with shrimp, eggs, and peanuts.",
+      "type": "fish",
+      "isFavorite": false
+    },
+    {
+      "id": 18,
+      "title": "Vegetarian Pad Thai",
+      "price": 9.99,
+      "description": "Thai rice noodles with tofu, vegetables, and peanuts.",
+      "type": "vegetarian",
+      "isFavorite": false
+    },
+    {
+      "id": 19,
+      "title": "Chicken Caesar Wrap",
+      "price": 8.49,
+      "description": "Grilled chicken, romaine lettuce, and Caesar dressing in a wrap.",
+      "type": "meat",
+      "isFavorite": false
+    },
+    {
+      "id": 20,
+      "title": "Falafel Wrap",
+      "price": 7.49,
+      "description": "Crispy falafel, lettuce, tomato, and tahini sauce in a wrap.",
+      "type": "vegetarian",
+      "isFavorite": false
+    },
+    {
+      "id": 21,
+      "title": "Sushi Platter",
+      "price": 14.99,
+      "description": "An assortment of fresh nigiri and sushi rolls.",
+      "type": "fish",
+      "isFavorite": false
+    },
+    {
+      "id": 22,
+      "title": "Vegan Sushi Rolls",
+      "price": 11.99,
+      "description": "Sushi rolls filled with avocado, cucumber, and carrots.",
+      "type": "vegetarian",
+      "isFavorite": false
+    },
+    {
+      "id": 23,
+      "title": "Beef Steak",
+      "price": 15.99,
+      "description": "Grilled beef steak served with mashed potatoes and vegetables.",
+      "type": "meat",
+      "isFavorite": false
+    },
+    {
+      "id": 24,
+      "title": "Vegan Burger",
+      "price": 8.49,
+      "description": "Plant-based patty with avocado, tomato, and vegan mayo.",
+      "type": "vegetarian",
+      "isFavorite": false
+    },
+    {
+      "id": 25,
+      "title": "Chicken Wings",
+      "price": 9.99,
+      "description": "Spicy and crispy chicken wings served with ranch dip.",
+      "type": "meat",
+      "isFavorite": false
+    },
+    {
+      "id": 26,
+      "title": "Vegetable Spring Rolls",
+      "price": 6.99,
+      "description": "Crispy spring rolls filled with mixed vegetables.",
+      "type": "vegetarian",
+      "isFavorite": false
+    },
+    {
+      "id": 27,
+      "title": "Tuna Poke Bowl",
+      "price": 12.99,
+      "description": "Fresh tuna, rice, avocado, and soy sauce in a bowl.",
+      "type": "fish",
+      "isFavorite": false
+    },
+    {
+      "id": 28,
+      "title": "Vegan Poke Bowl",
+      "price": 11.49,
+      "description": "Rice, tofu, avocado, and sesame dressing in a bowl.",
+      "type": "vegetarian",
+      "isFavorite": false
+    },
+    {
+      "id": 29,
+      "title": "Chicken Fried Rice",
+      "price": 9.49,
+      "description": "Stir-fried rice with chicken, vegetables, and soy sauce.",
+      "type": "meat",
+      "isFavorite": false
+    },
+    {
+      "id": 30,
+      "title": "Vegetable Fried Rice",
+      "price": 8.49,
+      "description": "Stir-fried rice with mixed vegetables and soy sauce.",
+      "type": "vegetarian",
+      "isFavorite": false
+    }
+  ]
+}
